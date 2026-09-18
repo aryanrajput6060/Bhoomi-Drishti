@@ -1,0 +1,18 @@
+# ---------------------------------------------------------------------------
+# Render Blueprint — BHUMI INSIGHT
+# Single web service: FastAPI (backend/) serves the built React SPA (frontend/dist).
+# One URL, one port, no CORS / no extra env vars required.
+# ---------------------------------------------------------------------------
+services:
+  - type: web
+    name: bhumi-insight
+    runtime: python
+    plan: free
+    region: singapore # closest to India; remove this line to use Render's default (oregon)
+    buildCommand: "pip install -r requirements.txt && cd frontend && npm ci --include=dev && npm run build"
+    startCommand: "cd backend && uvicorn main:app --host 0.0.0.0 --port $PORT"
+    healthCheckPath: /api/health
+    autoDeployTrigger: commit # deploy automatically on every push (use 'off' to deploy manually)
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.14.3

@@ -1,0 +1,27 @@
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+
+# ---------- Node / Vite ----------
+node_modules/
+frontend/dist/
+dist-ssr/
+*.local
+
+# ---------- Local tools / OS ----------
+cloudflared.exe
+*.log
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# ---------- Env / secrets ----------
+.env
+.env.*

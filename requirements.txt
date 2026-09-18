@@ -1,0 +1,5 @@
+# BHUMI INSIGHT — backend runtime dependencies (Render / local)
+# Pinned to the versions currently running locally.
+fastapi==0.141.1
+uvicorn==0.53.0
+pydantic==2.13.5
