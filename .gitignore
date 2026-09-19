@@ -1,12 +1,18 @@
 # ---------- Python ----------
 __pycache__/
 *.py[cod]
+*.pyo
+*.pyd
 *.egg-info/
 .venv/
 venv/
 env/
+ENV/
 .pytest_cache/
 .mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
 
 # ---------- Node / Vite ----------
 node_modules/
@@ -25,4 +31,22 @@ Thumbs.db
 # ---------- Env / secrets ----------
 .env
 .env.*
+!/.env.example
+
+# ---------- ML / downloaded models & data ----------
+# Whisper models and runtime data are downloaded automatically
 jarvis/backend/data/
+**/models/
+**/model_cache/
+**/huggingface/
+**/.cache/
+
+# ---------- Build output ----------
+dist/
+build/
+.next/
+out/
+
+# ---------- Temporary files ----------
+*.tmp
+*.temp
